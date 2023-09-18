@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TerVer</title>
+    <link rel="stylesheet" href="comb_style.css">
+    <script src="comb_script.js"></script>
+</head>
+<body>
+    <h1>Выберите что нужно посчитать</h1>
+    <div class="main_div">
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Сочетания без повторений: </h3>
+            </div>
+            <div class="example">
+                <p class="symbol">C</p>
+            </div>
+            <div class="example">
+                <div>
+                    <input id="btn_one_1" min="1" max="50" type="number" class="values">
+                </div>
+                <div>
+                    <input id="btn_one_2" min="1" max="50" type="number" class="values">
+                </div>
+            </div>
+            <div class="example but_block">
+                <button class="but_calculate" onclick="butOne()">Вычислить</button>
+            </div>
+            <div id="block_1" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px;" class="symbol">C</span>
+                <span style="display: inline-block">
+                    <div id="index_up_m_1" class="index">m</div>
+                    <div id="index_up_n_1" class="index">n</div>
+                </span>
+                <span style="vertical-align: 17px; font-size: 30px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_one_1" class="index center">n!</div>
+                        <hr class="line">
+                    <div id="up_one_2" class="index center">(n-m)!×m!</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_one_3" class="index center">a</div>
+                        <hr class="line">
+                    <div id="up_one_4" class="index center">b</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="ans_1" style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Сочетания с повторениями: </h3>
+            </div>
+            <div class="example">
+                <p class="symbol" style="text-decoration: overline">C</p>
+            </div>
+            <div class="example">
+                <div>
+                    <input id="btn_two_1" min="1" max="50" type="number" class="values">
+                </div>
+                <div>
+                    <input id="btn_two_2" min="1" max="50" type="number" class="values">
+                </div>
+            </div>
+            <div class="example but_block">
+                <button class="but_calculate" onclick="butTwo()">Вычислить</button>
+            </div>
+            <div id="block_2" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px; text-decoration: overline" class="symbol">C</span>
+                <span style="display: inline-block">
+                    <div id="index_up_m_2" class="index">m</div>
+                    <div id="index_up_n_2" class="index">n</div>
+                </span>
+                <span style="vertical-align: 17px; font-size: 30px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_two_1" class="index center">(n+m-1)!</div>
+                        <hr class="line">
+                    <div id="up_two_2" class="index center">(n-1)!×m!</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_two_3" class="index center">a</div>
+                        <hr class="line">
+                    <div id="up_two_4" class="index center">b</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="ans_2" style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Размещения без повторений: </h3>
+            </div>
+            <div class="example" style="max-height: 30px">
+                <p class="symbol">A</p>
+            </div>
+            <div class="example">
+                <div>
+                    <input id="btn_three_1" min="1" max="50" type="number" class="values">
+                </div>
+                <div>
+                    <input id="btn_three_2" min="1" max="50" type="number" class="values">
+                </div>
+            </div>
+            <div class="example but_block">
+                <button class="but_calculate" onclick="butThree()">Вычислить</button>
+            </div>
+            <div id="block_3" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px;" class="symbol">A</span>
+                <span style="display: inline-block">
+                    <div id="index_up_m_3" class="index">m</div>
+                    <div id="index_up_n_3"class="index">n</div>
+                </span>
+                <span style="vertical-align: 17px; font-size: 30px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_three_1" class="index center">n!</div>
+                        <hr class="line">
+                    <div id="up_three_2" class="index center">(n-m)!</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_three_3" class="index center">a</div>
+                        <hr class="line">
+                    <div id="up_three_4" class="index center">b</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="ans_3" style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Размещения с повторениями: </h3>
+            </div>
+            <div class="example" style="max-height: 30px">
+                <p class="symbol" style="text-decoration: overline">A</p>
+            </div>
+            <div class="example">
+                <div>
+                    <input id="btn_four_1" min="1" max="50" type="number" class="values">
+                </div>
+                <div>
+                    <input id="btn_four_2" min="1" max="50" type="number" class="values">
+                </div>
+            </div>
+            <div class="example but_block">
+                <button class="but_calculate" onclick="butFour()">Вычислить</button>
+            </div>
+            <div id="block_4" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px; text-decoration: overline" class="symbol">A</span>
+                <span style="display: inline-block">
+                    <div id="index_up_m_4" class="index">m</div>
+                    <div id="index_up_n_4" class="index">n</div>
+                </span>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="up_four_1" style="vertical-align: 17px; font-size: 30px">n</span>
+                <span id="up_four_2" style="font-size: 20px; vertical-align: 30px; margin-left: -5px;">m</span>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 2px; margin-right: 4px">=</span>
+                <span id="ans_4" style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Перестановки без повторения: </h3>
+            </div>
+            <div class="example" style="max-height: 30px">
+                <p class="symbol">P</p>
+            </div>
+            <div class="example"><input id="btn_five_1" min="1" max="50" type="number" class="values"></div>
+            <div class="example but_block">
+                <button class="but_calculate" onclick="butFive()">Вычислить</button>
+            </div>
+            <div id="block_5" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px;" class="symbol">P</span>
+                <span id="index_up_n_5" style="display: inline-block; font-size: 25px">n</span>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="up_five_1" style="vertical-align: 17px; font-size: 30px">n!</span>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 2px; margin-right: 4px">=</span>
+                <span id="ans_5"style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="example operation">
+                <h3>Перестановки с повторениями:</h3>
+            </div>
+            <div class="example" style="max-height: 30px">
+                <p class="symbol">P<sub style="vertical-align: -8px;">n</sub></p>
+            </div>
+            <div style="font-size: 30px; margin-top: 15px;">
+                Введите количество значений n:
+                <span><input type="number" min="1" max="10" id="num_val" class="values" style="vertical-align: 3px; height: 30px; margin-left: 10px"></span>
+                <div class="example">
+                    <button onclick="numValues()" class="but_ok">Ок</button>
+                </div>
+                <div class="p_values"></div>
+            </div>
+            <div id="input_val" style="font-size: 30px; margin-top: 15px; display: none">
+                Введите значения:
+            </div>
+            <div id="values" style="margin-top: 15px;"></div>
+            <div id="block_6" style="display: none" class="answer">
+                <span style="display: inline-block; vertical-align: 7px;" class="symbol">P</span>
+                <span id="index_up_n_6" style="display: inline-block; font-size: 25px">n</span>
+                <span style="vertical-align: 17px; font-size: 30px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_six_1" class="index center">n!</div>
+                        <hr class="line">
+                    <div id="up_six_2" class="index center">(n-m)!</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <div style="display: inline-block; vertical-align: -2px;">
+                    <div id="up_six_3" class="index center">a</div>
+                        <hr class="line">
+                    <div id="up_six_4" class="index center">b</div>
+                </div>
+                <span style="vertical-align: 17px; font-size: 30px; margin-left: 4px; margin-right: 4px">=</span>
+                <span id="ans_6" style="vertical-align: 17px; font-size: 30px">????</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
